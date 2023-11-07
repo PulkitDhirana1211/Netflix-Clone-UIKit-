@@ -38,6 +38,7 @@ class HomeViewController: UIViewController {
                                                         width: view.bounds.width,
                                                         height: 450))
         homeFeedTable.tableHeaderView = headerView
+        APICaller.shared.getMovie(with: "Harry Potter")
     }
     
     private func configureNavBar() {
@@ -46,16 +47,11 @@ class HomeViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: nil)
         navigationItem.rightBarButtonItems = [
             UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action: nil),
-            UIBarButtonItem(image: UIImage(systemName: "play.rectangle"), style: .done, target: self, action: #selector(navigate)),
+            UIBarButtonItem(image: UIImage(systemName: "play.rectangle"), style: .done, target: self, action: nil),
         ]
-        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.tintColor = .label
     }
     
-    @objc private func navigate() {
-        let vc = NewPageViewController()
-        vc.title = "New Page"
-        navigationController?.pushViewController(vc, animated: true)
-    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
