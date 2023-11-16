@@ -18,6 +18,7 @@
 		5657C7E52AF2822E00FFC793 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5657C7E42AF2822E00FFC793 /* Assets.xcassets */; };
 		5657C7E82AF2822E00FFC793 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5657C7E62AF2822E00FFC793 /* LaunchScreen.storyboard */; };
 		566AAA5F2B05027000055E96 /* DataPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566AAA5E2B05027000055E96 /* DataPersistenceManager.swift */; };
+		566AAA612B054E0A00055E96 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566AAA602B054E0A00055E96 /* RequestManager.swift */; };
 		5684F3542AF2C876002A1E3E /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5684F3532AF2C876002A1E3E /* UpcomingViewController.swift */; };
 		5684F3562AF2C89B002A1E3E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5684F3552AF2C89B002A1E3E /* SearchViewController.swift */; };
 		5684F3582AF2C8B6002A1E3E /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5684F3572AF2C8B6002A1E3E /* DownloadsViewController.swift */; };
@@ -48,6 +49,7 @@
 		5657C7E72AF2822E00FFC793 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5657C7E92AF2822E00FFC793 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		566AAA5E2B05027000055E96 /* DataPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceManager.swift; sourceTree = "<group>"; };
+		566AAA602B054E0A00055E96 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		5684F3532AF2C876002A1E3E /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
 		5684F3552AF2C89B002A1E3E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5684F3572AF2C8B6002A1E3E /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				56AB4F602AF928E700CAF8C6 /* Extensions.swift */,
+				566AAA602B054E0A00055E96 /* RequestManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				5657C7E02AF2822C00FFC793 /* MainTabBarViewController.swift in Sources */,
 				5684F35F2AF2CF18002A1E3E /* CollectionViewTableViewCell.swift in Sources */,
 				562DDACF2AF6A33700904F98 /* HeroHeaderUIView.swift in Sources */,
+				566AAA612B054E0A00055E96 /* RequestManager.swift in Sources */,
 				568C6A2D2B0500640049590B /* NetflixCloneModel.xcdatamodeld in Sources */,
 				5684F3582AF2C8B6002A1E3E /* DownloadsViewController.swift in Sources */,
 				56AB4F672AF96DBA00CAF8C6 /* TitleCollectionViewCell.swift in Sources */,

@@ -46,7 +46,7 @@ class SearchViewController: UIViewController {
     }
     
     private func fetchDiscoverMovies() {
-        APICaller.shared.getDiscoverMovies { [weak self] result in
+        APICaller.shared.getData(urlString: RequestCalls.discoverMovies.rawValue) {[weak self] result in
             switch result {
             case .success(let titles):
                 self?.titles = titles
@@ -102,7 +102,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
                     self?.navigationController?.pushViewController(vc, animated: true)
                 }
             case .failure(let error):
-                print(error.localizedDescription )
+                print(error.localizedDescription)
             }
         }
     }

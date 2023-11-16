@@ -7,14 +7,6 @@
 
 import UIKit
 
-enum Sections: Int {
-    case TrendingMovies = 0
-    case TrendingTv = 1
-    case Popular = 2
-    case Upcoming = 3
-    case TopRated = 4
-}
-
 class HomeViewController: UIViewController {
     
     private var randomTrendingMovie: Title?
@@ -46,7 +38,8 @@ class HomeViewController: UIViewController {
     }
     
     private func configureHeroHeaderView() {
-        APICaller.shared.getTrendingMovies {[weak self] result in
+        
+        APICaller.shared.getData(urlString: RequestCalls.trendingMovies.rawValue) {[weak self] result in
             switch result {
             case .success(let titles):
                 let selectedTitle = titles.randomElement()
@@ -56,6 +49,7 @@ class HomeViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
+        
     }
     
     private func configureNavBar() {
@@ -103,27 +97,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.section {
         case Sections.TrendingMovies.rawValue:
-            APICaller.shared.getTrendingMovies { result in
-                switch result {
-                case .success(let titles):
-                    cell.configure(with: titles)
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
-            }
-            
-        case Sections.TrendingTv.rawValue:
-            APICaller.shared.getTrendingTvs { result in
-                switch result {
-                case .success(let titles):
-                    cell.configure(with: titles)
-                case .failure(let error):
-                    print(error)
-                }
-            }
-            
-        case Sections.Popular.rawValue:
-            APICaller.shared.getPopular { results in
+            APICaller.shared.getData(urlString: RequestCalls.trendingMovies.rawValue) { results in
                 switch results {
                 case .success(let titles):
                     cell.configure(with: titles)
@@ -132,9 +106,29 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 }
             }
             
+        case Sections.TrendingTv.rawValue:
+            APICaller.shared.getData(urlString: RequestCalls.trendingTv.rawValue) { results in
+                switch results {
+                case .success(let titles):
+                    cell.configure(with: titles)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+            
+        case Sections.Popular.rawValue:
+            APICaller.shared.getData(urlString: RequestCalls.popular.rawValue) { results in
+                switch results {
+                case .success(let titles):
+                    cell.configure(with: titles)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+                        
         case Sections.Upcoming.rawValue:
-            APICaller.shared.getUpcomingMovies { result in
-                switch result {
+            APICaller.shared.getData(urlString: RequestCalls.upcoming.rawValue) { results in
+                switch results {
                 case .success(let titles):
                     cell.configure(with: titles)
                 case .failure(let error):
@@ -143,8 +137,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             }
             
         case Sections.TopRated.rawValue:
-            APICaller.shared.getTopRated { result in
-                switch result {
+            APICaller.shared.getData(urlString: RequestCalls.topRated.rawValue) { results in
+                switch results {
                 case .success(let titles):
                     cell.configure(with: titles)
                 case .failure(let error):
